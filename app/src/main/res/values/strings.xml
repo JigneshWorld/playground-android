@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GithubTrendingProjects</string>
+    <string name="title_popular_projects">Popular Projects</string>
+    <string name="message_empty_projects">No Projects</string>
 </resources>
