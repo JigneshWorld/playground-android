@@ -2,4 +2,21 @@
     <string name="app_name">GithubTrendingProjects</string>
     <string name="title_popular_projects">Popular Projects</string>
     <string name="message_empty_projects">No Projects</string>
+
+    <string name="message_empty_project_details">No Project Details</string>
+    <string name="title_project_details">Project Details</string>
+    <string name="number_stars">%1$s stars</string>
+    <string name="number_forks">%1$s forks</string>
+
+    <string name="subtitle_states">States</string>
+    <string name="subtitle_issues">Issues</string>
+    <string name="subtitle_pull_requests">Pull Requests</string>
+    <string name="subtitle_discussions">Discussions</string>
+
+    <string name="subtitle_releases">Releases</string>
+    <string name="subtitle_languages">Languages</string>
+    <string name="subtitle_mentions">Mentions</string>
+
+    <string name="message_others"> +%1$d others</string>
+
 </resources>
