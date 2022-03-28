@@ -5,6 +5,28 @@ on:
     branches: [ master ]
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Project
+        uses: actions/checkout@v2
+
+      - name: Local Properties
+        run: |
+          echo 'API_SERVER_URL="https://api.github.com/graphql"' >> local.properties
+          echo 'API_ACCESS_TOKEN="api_access_token"' >> local.properties
+          cat local.properties
+
+      - name: Run Lint
+        run: ./gradlew lint
+
+      - name: Upload Lint Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: lint.html
+          path: app/build/reports/lint-results-debug.html
+
+
   build:
     runs-on: ubuntu-latest
     steps:
