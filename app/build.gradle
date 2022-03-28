@@ -1,10 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.apollographql.apollo3'
 }
+
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(rootProject.file("local.properties")))
 
 android {
     compileSdk 31
+
+    def apiServerUrl = localProperties['API_SERVER_URL'] ?: '"https://api.github.com/graphql"'
+    def apiAccessToken = localProperties['API_ACCESS_TOKEN'] ?: '"api_access_token"'
 
     defaultConfig {
         applicationId "com.example.githubtrendingprojects"
@@ -17,6 +24,9 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
+
+        buildConfigField "String", 'API_SERVER_URL', apiServerUrl
+        buildConfigField "String", 'API_ACCESS_TOKEN', apiAccessToken
     }
 
     buildTypes {
@@ -46,7 +56,6 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation "androidx.compose.ui:ui:$compose_version"
     implementation "androidx.compose.material:material:$compose_version"
@@ -58,4 +67,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    implementation 'com.apollographql.apollo3:apollo-runtime:3.1.0'
+}
+
+apollo {
+    packageName.set("com.example.githubtrendingprojects")
 }

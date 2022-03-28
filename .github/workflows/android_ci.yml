@@ -12,10 +12,16 @@ jobs:
       - name: Clone Project
         uses: actions/checkout@v2
 
+      - name: Local Properties
+        run: |
+          echo 'API_SERVER_URL="https://api.github.com/graphql"' >> local.properties
+          echo 'API_ACCESS_TOKEN="api_access_token"' >> local.properties
+          cat local.properties
+
       - name: Setup JDK 11
         uses: actions/setup-java@v1
         with:
-            java-version: 11
+          java-version: 11
 
       - name: Run Checks
         run: ./gradlew check --stacktrace

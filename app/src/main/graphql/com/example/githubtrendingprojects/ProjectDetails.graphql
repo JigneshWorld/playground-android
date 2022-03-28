@@ -1,0 +1,45 @@
+query ProjectDetails($name: String!, $owner:String!) {
+    repository(name: $name, owner: $owner){
+        name
+        nameWithOwner
+        description
+        stargazerCount
+        forkCount
+        issues{
+            totalCount
+        }
+        pullRequests{
+            totalCount
+        }
+        discussions{
+            totalCount
+        }
+        releases{
+            totalCount
+        }
+        mentionableUsers(first: 5){
+            edges{
+                node{
+                    login
+                    avatarUrl
+                }
+            }
+            totalCount
+        }
+        languages(first: 5) {
+            edges{
+                node{
+                    color
+                    name
+                }
+            }
+        }
+        homepageUrl
+        primaryLanguage{name}
+        url
+        owner{
+            login
+            avatarUrl
+        }
+    }
+}

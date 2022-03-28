@@ -1,0 +1,20 @@
+query PopularProjects($queryString: String!, $numberOfRepository:Int!) {
+    search(query: $queryString, type: REPOSITORY, first:$numberOfRepository){
+        edges {
+            node{
+                ... on Repository {
+                    name
+                    nameWithOwner
+                    description
+                    stargazerCount
+                    primaryLanguage{name}
+                    url
+                    owner{
+                        login
+                        avatarUrl
+                    }
+                }
+            }
+        }
+    }
+}
