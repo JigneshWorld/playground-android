@@ -10,8 +10,8 @@ localProperties.load(new FileInputStream(rootProject.file("local.properties")))
 android {
     compileSdk 31
 
-    def apiServerUrl = localProperties['API_SERVER_URL'] ?: '"https://api.github.com/graphql"'
-    def apiAccessToken = localProperties['API_ACCESS_TOKEN'] ?: '"api_access_token"'
+    def apiServerUrl = localProperties['API_SERVER_URL'] ?: "https://api.github.com/graphql"
+    def apiAccessToken = localProperties['API_ACCESS_TOKEN'] ?: "api_access_token"
 
     defaultConfig {
         applicationId "com.example.githubtrendingprojects"
@@ -25,8 +25,8 @@ android {
             useSupportLibrary true
         }
 
-        buildConfigField "String", 'API_SERVER_URL', apiServerUrl
-        buildConfigField "String", 'API_ACCESS_TOKEN', apiAccessToken
+        buildConfigField "String", 'API_SERVER_URL', "\"$apiServerUrl\""
+        buildConfigField "String", 'API_ACCESS_TOKEN', "\"$apiAccessToken\""
     }
 
     buildTypes {
