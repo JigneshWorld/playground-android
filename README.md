@@ -2,16 +2,16 @@
 
 What's Included in this Project? 📦
 
-✅  [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) using Pull Requests & Squash-Merge 
-    Generally, we protect `master` branch [this way](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches). 
+✅  [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) using Pull Requests & Squash-Merge \
+    Generally, we protect `master` branch [this way](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches). \
     For now, protected `master` branch push using `git config branch.master.pushRemote no_push`
 
-✅  Continuous Integration - Lint, Unit Test, Integration Test, and Build using GitHub Actions
+✅  Continuous Integration - Lint, Unit Test, Integration Test, and Build using GitHub Actions \
     We can add more tools like sonar cube, danger, code coverage, screenshots etc 
 
-✅  Continuous Deployment - Deploy App to Firebase App Distribution using Fastlane on Github Actions
-    Notify Internal Testing Team with Specified Release Notes
-    We can add any platform's deployment workflow including Google Play.
+✅  Continuous Deployment - Deploy App to Firebase App Distribution using Fastlane on Github Actions \
+    Notify Internal Testing Team with Specified Release Notes \
+    We can add any platform's deployment workflow including Google Play. \
     To Join Internal Testing Team on Firebase App Distribution - [Click Here](https://appdistribution.firebase.dev/i/b104f9f45f7fd860)
 
 ✅  Android Jetpack & Modern Android Development Practices
@@ -30,15 +30,15 @@ What's Included in this Project? 📦
 
 ✅  Software Engineering Principles - DRY, SOLID etc
 
-✅  UI/UX - Supports different mobile devices 
+✅  UI/UX - Supports different mobile devices \
     We can easily add support for tablet and other devices
 
-✅  Internationalization Support - Used string resources
+✅  Internationalization Support - Used string resources \
     We can easily add this any language support just by adding translations
 
 ✅  Build Configurations - Gradle & local.properties for BuildConfig for URL & GitHub Access Token
 
-🔜  GitHub Secrets - Credentials & Configurations
+🔜  GitHub Secrets - Credentials & Configurations \
     Due to limited access on repository, used workflow specific environment variables
 
 🔜  CI/CD Pipeline Optimization using Build only when needed & caches
@@ -70,6 +70,16 @@ What's Included in this Project? 📦
 🔜  Many more things to come 
 
 ---- 
+## How to Run
+
+1) Clone & Open Project In Android Studio
+2) Copy below ENV variables on `local.properties` on project's root directory
+```
+API_SERVER_URL=https://api.github.com/graphql
+API_ACCESS_TOKEN=YOUR_GITHUB_ACCESS_TOKEN
+```
+[How to create GitHub's personal access token?](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+3) Run the app
 
 
 
