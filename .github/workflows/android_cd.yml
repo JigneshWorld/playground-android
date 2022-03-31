@@ -4,9 +4,34 @@ on:
   push:
     branches: [ master ]
 
+env:
+  API_SERVER_URL: "https://api.github.com/graphql"
+  API_ACCESS_TOKEN: "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"
+  FIREBASE_APP_ID: "1:389037316606:android:9e6257f53e806ac94388af"
+  FIREBASE_TOKEN: "1//0g5RD5_37HBr_CgYIARAAGBASNwF-L9IrOobDNEGgJYildfxV7_s8B-NXVzHykFsf70zFw8gQorbz11RhDDmhdvUwCvIBH0CaHN8"
+
 jobs:
-  build:
+  distribute:
     runs-on: ubuntu-latest
     steps:
-      - name: noop
-        run: echo 'noop'
+      - name: Clone Project
+        uses: actions/checkout@v2
+
+      - name: Local Properties
+        run: |
+          echo API_SERVER_URL=${API_SERVER_URL} >> local.properties
+          echo API_ACCESS_TOKEN=${API_ACCESS_TOKEN} >> local.properties
+          cat local.properties
+
+      - name: Setup JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+          bundler-cache: true
+
+      - name: Distribute app with Firebase App Distribution 🚀
+        run: bundle exec fastlane beta
