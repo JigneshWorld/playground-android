@@ -1,5 +1,9 @@
 # Mobile - CI/CD - Android
 
+The project's idea is to list trending projects from Github and then tap on one of them and show their details.
+
+---
+
 What's Included in this Project? 📦
 
 ✅  [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) using Pull Requests & Squash-Merge \
